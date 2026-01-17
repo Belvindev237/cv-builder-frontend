@@ -9,7 +9,7 @@ export default function ResumePro({ formData, setFormData, Prev, Next }) {
     }));
   };
 
-  // Calcul de la longueur pour le feedback visuel
+  // Calcul de la longueur pour le feedback visuel du résumé
   const charCount = formData.summary?.length || 0;
 
   return (
@@ -23,13 +23,14 @@ export default function ResumePro({ formData, setFormData, Prev, Next }) {
           et votre objectif de carrière.
         </p>
 
-        <div className="relative">
+        {/* --- CHAMP RÉSUMÉ --- */}
+        <div className="relative mb-10">
           <textarea
             name="summary"
-            rows="8"
+            rows="6"
             value={formData.summary || ""}
             onChange={handleChange}
-            placeholder="Ex: Passionné par le développement web avec 5 ans d'expérience, j'ai accompagné de nombreuses startups dans la création d'interfaces intuitives et performantes..."
+            placeholder="Ex: Passionné par le développement web avec 5 ans d'expérience..."
             className="w-full border-2 border-gray-100 rounded-xl p-4 focus:border-blue-500 outline-none transition-all shadow-sm bg-white text-gray-700 leading-relaxed"
           ></textarea>
 
@@ -47,7 +48,30 @@ export default function ResumePro({ formData, setFormData, Prev, Next }) {
           </div>
         </div>
 
-        {/* Petits conseils de rédaction */}
+        {/* --- NOUVELLE SECTION : CENTRES D'INTÉRÊT --- */}
+        <div className="border-t pt-8 mb-6">
+          <h3 className="text-xl font-bold text-gray-800 mb-2">
+            Centres d’intérêt & Hobbies
+          </h3>
+          <p className="text-gray-500 text-sm mb-6">
+            Qu'est-ce qui vous passionne en dehors du travail ? Cela permet de
+            montrer votre personnalité.
+          </p>
+
+          <textarea
+            name="hobbies"
+            rows="3"
+            value={formData.hobbies || ""}
+            onChange={handleChange}
+            placeholder="Ex: Photographie, Marathon, Piano, Bénévolat..."
+            className="w-full border-2 border-gray-100 rounded-xl p-4 focus:border-blue-500 outline-none transition-all shadow-sm bg-white text-gray-700 leading-relaxed"
+          ></textarea>
+          <p className="text-[11px] text-gray-400 mt-2 italic">
+            Astuce : Séparez vos centres d'intérêt par des virgules.
+          </p>
+        </div>
+
+        {/* --- PETITS CONSEILS DE RÉDACTION (Gardés) --- */}
         <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-blue-50 p-3 rounded-lg border border-blue-100">
             <p className="text-xs text-blue-700 font-bold mb-1">💡 Conseil 1</p>
@@ -69,7 +93,7 @@ export default function ResumePro({ formData, setFormData, Prev, Next }) {
           </div>
         </div>
 
-        {/* NAVIGATION */}
+        {/* --- NAVIGATION --- */}
         <div className="flex justify-between mt-12 pt-6 border-t">
           <button
             onClick={Prev}

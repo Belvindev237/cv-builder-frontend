@@ -20,7 +20,7 @@ const RegisterForm = ({ RegisterDone }) => {
       RegisterDone();
     } catch (error) {
       const message = error.response?.data?.detail || "Erreur d'inscription";
-      alert("Registration failed: " + message);
+      // alert("Registration failed: " + message);
     }
   };
 

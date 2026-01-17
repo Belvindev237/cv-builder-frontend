@@ -12,15 +12,22 @@ const LoginForm = () => {
       //  On utilise la fonction login importée en haut
       const data = await login(email, password);
 
+      const pendingCv = localStorage.getItem("pendingCv");
       //  Attention : FastAPI renvoie 'access_token', pas 'token'
       localStorage.setItem("token", data.access_token);
-      navigate("/profil");
+      localStorage.setItem("username", data.username);
+      localStorage.setItem("email", data.userEmail);
+      if (pendingCv) {
+        navigate("/builder");
+      } else {
+        navigate("/profil");
+      }
 
       alert("Connexion réussie !");
     } catch (error) {
       // ✅ Gestion d'erreur plus robuste
       const message = error.response?.data?.detail || "Erreur de connexion";
-      alert("Login failed: " + message);
+      // alert("Login failed: " + message);
     }
   };
 

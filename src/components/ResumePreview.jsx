@@ -1,6 +1,9 @@
 // On récupère formData en tant que Prop
+import { create_cv } from "../services/api";
+
 export default function CVPreview({ formData }) {
   // On extrait les données ou on utilise des valeurs vides/par défaut
+  // AJOUT de "hobbies" dans le destructuring
   const {
     firstName = "Prénom",
     lastName = "Nom",
@@ -10,17 +13,18 @@ export default function CVPreview({ formData }) {
     address = "Adresse complète",
     website = "",
     summary = "Votre résumé professionnel s'affichera ici...",
+    hobbies = "",
     experienceList = [],
     educationList = [],
-    skills = [],
-    technicalSkills = [],
-    softSkills = [],
+    skill = {
+      technicalSkills: [],
+      softSkills: [],
+    },
     languages = [],
   } = formData || {};
-  console.log("STATE PARENT :", formData.skills);
-
+  console.log(formData);
   return (
-    <div className="w-full max-w-[850px] mx-auto bg-white shadow-2xl min-h-[1100px] flex flex-col font-sans text-slate-800 scale-90 origin-top">
+    <div className="w-full max-w-[21cm] mx-auto bg-white shadow-2xl min-h-[29.7] flex flex-col font-sans text-slate-800 scale-90 origin-top">
       {/* --- HEADER --- */}
       <div className="bg-slate-900 text-white p-10 flex justify-between items-center">
         <div>
@@ -64,28 +68,29 @@ export default function CVPreview({ formData }) {
             </div>
           </section>
 
-          {skills.length > 0 && (
-            <section>
+          {(skill.technicalSkills?.length > 0 ||
+            skill.softSkills?.length > 0) && (
+            <section className="mt-6">
               <h3 className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-4">
                 Compétences
               </h3>
-              <div className="flex flex-wrap gap-2">
-                {technicalSkills.map((skill, i) => (
+              <div className="flex flex-wrap gap-2 mb-3">
+                {skill.technicalSkills.map((s, i) => (
                   <span
-                    key={i}
-                    className=" text-slate-700 px-2 py-1 rounded text-[10px] font-bold uppercase"
+                    key={`tech-${i}`}
+                    className="bg-slate-100 text-slate-700 px-2 py-1 rounded text-[10px] font-bold uppercase"
                   >
-                    {skill}
+                    {s}
                   </span>
                 ))}
               </div>
               <div className="flex flex-wrap gap-2">
-                {softSkills.map((skill, i) => (
+                {skill?.softSkills?.map((s, i) => (
                   <span
-                    key={i}
-                    className=" text-slate-700 px-2 py-1 rounded text-[10px] font-bold uppercase"
+                    key={`soft-${i}`}
+                    className="bg-blue-50 text-slate-600 px-2 py-1 rounded text-[10px] font-medium italic"
                   >
-                    {skill}
+                    {s}
                   </span>
                 ))}
               </div>
@@ -103,6 +108,25 @@ export default function CVPreview({ formData }) {
                     • {lang.name}
                     <span className="text-slate-400 ml-1">({lang.level})</span>
                   </p>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* --- NOUVELLE SECTION : CENTRES D'INTÉRÊT --- */}
+          {hobbies && (
+            <section>
+              <h3 className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-4">
+                Centres d'intérêt
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {hobbies.split(",").map((hobby, i) => (
+                  <span
+                    key={`hobby-${i}`}
+                    className="bg-white border border-slate-200 text-slate-600 px-2 py-1 rounded text-[10px] font-medium"
+                  >
+                    {hobby.trim()}
+                  </span>
                 ))}
               </div>
             </section>
@@ -134,17 +158,18 @@ export default function CVPreview({ formData }) {
                     <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-blue-500" />
                     <div className="flex justify-between items-start mb-1">
                       <h4 className="font-bold text-[13px] text-slate-800 uppercase">
-                        {exp.jobTitle}
+                        {exp.job_title || exp.jobTitle}
                       </h4>
                       <span className="text-[10px] font-bold text-blue-500 bg-blue-50 px-2 py-0.5 rounded uppercase">
-                        {exp.startDate} - {exp.endDate || "Présent"}
+                        {exp.start_date || exp.startDate} -{" "}
+                        {exp.end_date || exp.endDate || "Présent"}
                       </span>
                     </div>
                     <p className="text-[11px] font-bold text-slate-500 mb-2">
                       {exp.company}
                     </p>
                     <p className="text-[11px] text-slate-600 leading-relaxed whitespace-pre-line text-left">
-                      {exp.jobDescription}
+                      {exp.job_description}
                     </p>
                   </div>
                 ))
@@ -170,7 +195,8 @@ export default function CVPreview({ formData }) {
                     <p className="text-[11px] text-slate-500 font-medium">
                       {edu.institution} —{" "}
                       <span className="italic">
-                        {edu.startDate} - {edu.endDate}
+                        {edu.start_date || edu.startDate} -{" "}
+                        {edu.end_date || edu.endDate || "Present"}
                       </span>
                     </p>
                   </div>

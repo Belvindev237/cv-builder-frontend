@@ -8,18 +8,26 @@ export default function Competence({ formData, setFormData, Prev, Next }) {
   // Fonction pour ajouter une compétence
   const addSkill = (category, value, setter) => {
     if (value.trim() === "") return;
+
     setFormData((prev) => ({
       ...prev,
-      [category]: [...(prev[category] || []), value.trim()],
+      // On recrée l'objet skill (ou skills selon ton choix)
+      skill: {
+        ...prev.skill, // On garde les catégories qu'on ne touche pas
+        [category]: [...(prev.skill?.[category] || []), value.trim()],
+      },
     }));
-    setter(""); // Vide l'input
+    setter("");
   };
 
   // Fonction pour supprimer une compétence
   const removeSkill = (category, indexToRemove) => {
     setFormData((prev) => ({
       ...prev,
-      [category]: prev[category].filter((_, i) => i !== indexToRemove),
+      skill: {
+        ...prev.skill,
+        [category]: prev.skill[category].filter((_, i) => i !== indexToRemove),
+      },
     }));
   };
 
@@ -52,7 +60,7 @@ export default function Competence({ formData, setFormData, Prev, Next }) {
             </button>
           </div>
           <div className="space-y-2">
-            {formData.technicalSkills?.map((skill, index) => (
+            {formData.skill?.technicalSkills?.map((skill, index) => (
               <div
                 key={index}
                 className="flex justify-between items-center bg-gray-50 p-3 rounded-lg border border-gray-100"
@@ -93,7 +101,7 @@ export default function Competence({ formData, setFormData, Prev, Next }) {
             </button>
           </div>
           <div className="space-y-2">
-            {formData.softSkills?.map((skill, index) => (
+            {formData.skill?.softSkills?.map((skill, index) => (
               <div
                 key={index}
                 className="flex justify-between items-center bg-gray-50 p-3 rounded-lg border border-gray-100"

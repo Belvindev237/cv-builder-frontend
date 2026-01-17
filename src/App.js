@@ -10,6 +10,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AuthPage from "./pages/AuthPage";
 import Profil from "./pages/Profil";
+import Visualisation from "./pages/Visualisation";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         <Route path="/builder" element={<Builder />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/profil" element={<Profil />} />
+        <Route path="/builder/:id" element={<Builder />} />
+        <Route path="/visualisation/:id" element={<Visualisation />} />
       </Routes>
     </Router>
   );
