@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Builder() {
   const { id } = useParams();
-  // const [cvData, setCvData] = useState(null);
+  const [cvData, setCvData] = useState(null);
   const navigate = useNavigate();
   const steps = [
     "Infos Perso",
