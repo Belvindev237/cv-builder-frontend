@@ -1,4 +1,4 @@
-import React, { useState } from "react"; // 1. Importez useState
+import { useState } from "react"; // 1. Importez useState
 import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {

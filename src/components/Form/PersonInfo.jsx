@@ -1,4 +1,4 @@
-import React from "react";
+//import React from "react";
 import InputField from "../FormField/InputField";
 
 export default function PersonInfo({ formData, setFormData, Next }) {

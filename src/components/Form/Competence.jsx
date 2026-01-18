@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 
 export default function Competence({ formData, setFormData, Prev, Next }) {
   // État local pour les champs de saisie temporaires

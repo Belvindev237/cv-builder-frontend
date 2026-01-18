@@ -1,5 +1,5 @@
 // On récupère formData en tant que Prop
-import { create_cv } from "../services/api";
+//import { create_cv } from "../services/api";
 
 export default function CVPreview({ formData }) {
   // On extrait les données ou on utilise des valeurs vides/par défaut

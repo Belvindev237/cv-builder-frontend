@@ -1,12 +1,12 @@
-import logo from "./logo.svg";
+//import logo from "./logo.svg";
 import "./App.css";
 import "./index.css";
 import "./components/Navbar";
-import Navbar from "./components/Navbar";
+//import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Builder from "./pages/Builder";
-import Auth from "./pages/AuthPage";
-import React from "react";
+//import Auth from "./pages/AuthPage";
+//import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AuthPage from "./pages/AuthPage";
 import Profil from "./pages/Profil";

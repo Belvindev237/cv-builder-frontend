@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 // Liste des langues les plus courantes pour le select
 const COMMON_LANGUAGES = [

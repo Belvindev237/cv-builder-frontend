@@ -1,5 +1,5 @@
-import { Navigate } from "react-router-dom";
-import image1 from "../images/image1.png";
+//import { Navigate } from "react-router-dom";
+//import image1 from "../images/image1.png";
 import { useNavigate } from "react-router-dom";
 
 export default function Hero() {

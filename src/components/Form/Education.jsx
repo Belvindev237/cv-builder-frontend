@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Button from "../FormField/Button";
+import { useState } from "react";
+//import Button from "../FormField/Button";
 import InputField from "../FormField/InputField";
 
 export default function Education({ formData, setFormData, Prev, Next }) {
