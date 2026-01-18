@@ -1,4 +1,3 @@
-import { Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { get_user_cv } from "../services/api";
