@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Builder() {
   const { id } = useParams();
-  const [cvData, setCvData] = useState(null);
+  // const [cvData, setCvData] = useState(null);
   const navigate = useNavigate();
   const steps = [
     "Infos Perso",
@@ -28,7 +28,7 @@ export default function Builder() {
     "Langues",
     "Resume",
   ];
-  const [step, setStep] = useState(0);
+  // const [step, setStep] = useState(0);
   const [currentStep, setCurrentStep] = useState(0);
   const onNext = () => {
     if (currentStep < steps.length - 1) {
