@@ -204,7 +204,7 @@ export default function Builder() {
     };
     console.log("État actuel avant sauvegarde:", cvData);
     const token = localStorage.getItem("token");
-    if (!token) {
+    if (!token || token === "null" || token === "undefined") {
       localStorage.setItem("pendingCv", JSON.stringify(payload));
       localStorage.setItem("step", currentStep.toString());
       localStorage.setItem("pending_cv_form", JSON.stringify(formData));
