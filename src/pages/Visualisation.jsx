@@ -24,7 +24,7 @@ export default function Visualisation() {
   const navigate = useNavigate();
   const [selectedTemplate, setSelectedTemplate] = useState(null);
   const [isGenerating, setIsGenerating] = useState(false);
-
+const API_URL= "http://localhost:8000"|| "https://cv-builder-d7rd.onrender.com";
   const templates = [
     { id: 1, name: t('visualisation.templates.1'), component: CVTemplate1 },
     { id: 2, name: t('visualisation.templates.2'), component: CVTemplate2 },
@@ -83,7 +83,7 @@ export default function Visualisation() {
 
       console.log("📄 HTML généré pour template", selectedTemplate);
 
-      const response = await fetch("http://localhost:8000/generate-pdf", {
+      const response = await fetch(`${API_URL}/generate-pdf`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
