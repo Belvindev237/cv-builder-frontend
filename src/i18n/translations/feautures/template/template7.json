@@ -1,0 +1,41 @@
+{
+  "fr": {
+    "template7": {
+      "summary": "Résumé",
+      "experience": "Expérience",
+      "education": "Formation",
+      "skills": "Compétences",
+      "technical": "Techniques",
+      "soft": "Transversales",
+      "languages": "Langues",
+      "hobbies": "Loisirs",
+      "present": "Présent"
+    }
+  },
+  "en": {
+    "template7": {
+      "summary": "Summary",
+      "experience": "Experience",
+      "education": "Education",
+      "skills": "Skills",
+      "technical": "Technical",
+      "soft": "Soft Skills",
+      "languages": "Languages",
+      "hobbies": "Hobbies",
+      "present": "Present"
+    }
+  },
+  "it": {
+    "template7": {
+      "summary": "Riepilogo",
+      "experience": "Esperienza",
+      "education": "Formazione",
+      "skills": "Competenze",
+      "technical": "Tecniche",
+      "soft": "Trasversali",
+      "languages": "Lingue",
+      "hobbies": "Hobby",
+      "present": "Presente"
+    }
+  }
+}

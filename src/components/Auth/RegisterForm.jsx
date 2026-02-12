@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { register } from "../../services/api";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const RegisterForm = ({ RegisterDone }) => {
+  const {t}=useTranslation();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,7 +30,7 @@ const RegisterForm = ({ RegisterDone }) => {
     <form onSubmit={handleSubmit} className="space-y-4 w-full">
       <div className="space-y-1">
         <label className="text-xs font-bold text-slate-700 uppercase">
-          Nom complet
+          {t("label.fullname")}
         </label>
         <div className="relative">
           <i className="fas fa-user absolute left-3 top-3.5 text-slate-400"></i>
@@ -44,7 +46,7 @@ const RegisterForm = ({ RegisterDone }) => {
 
       <div className="space-y-1">
         <label className="text-xs font-bold text-slate-700 uppercase">
-          Email
+         {t("label.email")}
         </label>
         <div className="relative">
           <i className="fas fa-at absolute left-3 top-3.5 text-slate-400"></i>
@@ -61,7 +63,7 @@ const RegisterForm = ({ RegisterDone }) => {
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-1">
           <label className="text-xs font-bold text-slate-700 uppercase text-[10px]">
-            Mot de passe
+            {t("label.mdp")}
           </label>
           <input
             type="password"
@@ -73,7 +75,7 @@ const RegisterForm = ({ RegisterDone }) => {
         </div>
         <div className="space-y-1">
           <label className="text-xs font-bold text-slate-700 uppercase text-[10px]">
-            Confirmer
+           {t("label.confirm")}
           </label>
           <input
             type="password"
@@ -89,7 +91,7 @@ const RegisterForm = ({ RegisterDone }) => {
         type="submit"
         className="w-full bg-slate-900 hover:bg-black text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-95 mt-2 shadow-lg"
       >
-        Créer mon compte <i className="fas fa-user-plus ml-1 text-sm"></i>
+        {t("button.register")}<i className="fas fa-user-plus ml-1 text-sm"></i>
       </button>
     </form>
   );

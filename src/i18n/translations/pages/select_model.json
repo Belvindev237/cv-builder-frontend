@@ -1,0 +1,155 @@
+{
+  "fr": {
+    "selectModel": {
+      "header": {
+        "title": "Choisissez votre",
+        "subtitle": "modèle parfait",
+        "description": "Sélectionnez parmi une vingtaine de templates professionnels et laissez la magie opérer"
+      },
+      "stats": {
+        "models": "Modèles",
+        "customizable": "Personnalisable",
+        "creation": "Création"
+      },
+      "filters": {
+        "all": "Tous les modèles",
+        "popular": "Populaires",
+        "new": "Nouveaux"
+      },
+      "status": {
+        "selected": "1 modèle sélectionné",
+        "available": "5 modèles disponibles"
+      },
+      "actions": {
+        "choose": "Choisir ce modèle",
+        "continue": "Continuer avec ce modèle →",
+        "startNow": "Commencer maintenant"
+      },
+      "badges": {
+        "new": "Nouveau",
+        "popular": "Populaire"
+      },
+      "readySection": {
+        "title": "Prêt à créer votre CV ?",
+        "description": "Vous avez sélectionné"
+      },
+      "features": {
+        "quick": {
+          "title": "Création rapide",
+          "description": "Créez votre CV en moins de 5 minutes"
+        },
+        "custom": {
+          "title": "100% Personnalisable",
+          "description": "Adaptez chaque détail à votre style"
+        },
+        "pdf": {
+          "title": "Export PDF",
+          "description": "Téléchargez en format professionnel"
+        }
+      },
+      "default":"Nom"
+    }
+  },
+  "en": {
+    "selectModel": {
+      "header": {
+        "title": "Choose your",
+        "subtitle": "perfect template",
+        "description": "Select from a dozen professional templates and let the magic happen"
+      },
+      "stats": {
+        "models": "Models",
+        "customizable": "Customizable",
+        "creation": "Creation"
+      },
+      "filters": {
+        "all": "All models",
+        "popular": "Popular",
+        "new": "New"
+      },
+      "status": {
+        "selected": "1 model selected",
+        "available": "5 models available"
+      },
+      "actions": {
+        "choose": "Choose this model",
+        "continue": "Continue with this model →",
+        "startNow": "Start now"
+      },
+      "badges": {
+        "new": "New",
+        "popular": "Popular"
+      },
+      "readySection": {
+        "title": "Ready to create your CV?",
+        "description": "You have selected"
+      },
+      "features": {
+        "quick": {
+          "title": "Quick Creation",
+          "description": "Create your CV in under 5 minutes"
+        },
+        "custom": {
+          "title": "100% Customizable",
+          "description": "Adapt every detail to your style"
+        },
+        "pdf": {
+          "title": "PDF Export",
+          "description": "Download in professional format"
+        }
+      },
+      "default":"LastName"
+    }
+  },
+  "it": {
+    "selectModel": {
+      "header": {
+        "title": "Scegli il tuo",
+        "subtitle": "modello perfetto",
+        "description": "Seleziona tra una ventina di template professionali e lascia che la magia accada"
+      },
+      "stats": {
+        "models": "Modelli",
+        "customizable": "Personalizzabile",
+        "creation": "Creazione"
+      },
+      "filters": {
+        "all": "Tutti i modelli",
+        "popular": "Popolari",
+        "new": "Nuovi"
+      },
+      "status": {
+        "selected": "1 modello selezionato",
+        "available": "5 modelli disponibili"
+      },
+      "actions": {
+        "choose": "Scegli questo modello",
+        "continue": "Continua con questo modello →",
+        "startNow": "Inizia ora"
+      },
+      "badges": {
+        "new": "Nuovo",
+        "popular": "Popolare"
+      },
+      "readySection": {
+        "title": "Pronto a creare il tuo CV?",
+        "description": "Hai selezionato"
+      },
+      "features": {
+        "quick": {
+          "title": "Creazione veloce",
+          "description": "Crea il tuo CV in meno di 5 minuti"
+        },
+        "custom": {
+          "title": "100% Personalizzabile",
+          "description": "Adatta ogni dettaglio al tuo stile"
+        },
+        "pdf": {
+          "title": "Esporta PDF",
+          "description": "Scarica in formato professionale"
+        }
+      },
+      "default":"Nome"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "fr": {
+    "template9": {
+      "informations": "INFORMATIONS",
+      "competences": "COMPÉTENCES",
+      "langues": "LANGUES",
+      "interets": "INTÉRÊTS",
+      "experiencesTitle": "EXPÉRIENCES PROFESSIONNELLES",
+      "formationsTitle": "FORMATIONS",
+      "current": "ACTUEL"
+    }
+  },
+  "en": {
+    "template9": {
+      "informations": "INFORMATION",
+      "competences": "SKILLS",
+      "langues": "LANGUAGES",
+      "interets": "INTERESTS",
+      "experiencesTitle": "PROFESSIONAL EXPERIENCE",
+      "formationsTitle": "EDUCATION",
+      "current": "PRESENT"
+    }
+  },
+  "it": {
+    "template9": {
+      "informations": "INFORMAZIONI",
+      "competences": "COMPETENZE",
+      "langues": "LINGUE",
+      "interets": "INTERESSI",
+      "experiencesTitle": "ESPERIENZE PROFESSIONALI",
+      "formationsTitle": "FORMAZIONE",
+      "current": "ATTUALE"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "fr": {
+    "template10": {
+      "skills": "Compétences",
+      "languages": "Langues",
+      "interests": "Intérêts",
+      "experience": "Expériences",
+      "education": "Formation",
+      "currentt": "Présent"
+    }
+  },
+  "en": {
+    "template10": {
+      "skills": "Skills",
+      "languages": "Languages",
+      "interests": "Interests",
+      "experience": "Experiences",
+      "education": "Education",
+      "current": "Present"
+    }
+  },
+  "it": {
+    "template10": {
+      "skills": "Competenze",
+      "languages": "Lingue",
+      "interests": "Interessi",
+      "experience": "Esperienze",
+      "education": "Formazione",
+      "current": "Presente",
+      "contact":"Contatti"
+    }
+  }
+}

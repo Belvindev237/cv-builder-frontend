@@ -1,0 +1,20 @@
+{
+  "fr":{
+    "fullname":"Nom complet",
+    "mdp":"Mot de passe",
+    "email":"Adresse Email",
+    "confirm":"Confirmer"
+  },
+  "en":{
+    "fullname":"fullname",
+    "mdp":"Password",
+    "email":"Email address",
+    "confirm":"Confirm password"
+  },
+  "it":{
+    "fullname":"Nome completo",
+    "mdp":"Password",
+    "email":"Indirizzo email",
+    "confirm":"Conferma password"
+  }
+}

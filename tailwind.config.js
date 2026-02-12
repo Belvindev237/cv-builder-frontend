@@ -1,7 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"], // inclut tous tes fichiers React
-  theme: { extend: {} },
-  plugins: [require("daisyui")],
-  // obligatoire
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+      },
+    },
+  },
+  plugins: [],
+  // Assure-toi que safelist est activé pour les gradients
+  safelist: [
+    "bg-gradient-to-r",
+    "bg-gradient-to-br",
+    "from-blue-600",
+    "to-indigo-600",
+    "bg-clip-text",
+    "text-transparent",
+  ],
 };

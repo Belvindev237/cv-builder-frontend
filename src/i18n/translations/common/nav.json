@@ -1,0 +1,55 @@
+{
+  "fr": {
+    "nav": {
+      "brand": "CV Builder",
+      "menu": {
+        "home": "Accueil",
+        "pricing": "Tarifications",
+        "contact": "Contacts"
+      },
+      "auth": {
+        "login": "Se connecter",
+        "profile": "Mon profil"
+      },
+      "language": {
+        "label": "Langue / Language"
+      }
+    }
+  },
+
+  "en": {
+    "nav": {
+      "brand": "CV Builder",
+      "menu": {
+        "home": "Home",
+        "pricing": "Pricing",
+        "contact": "Contact"
+      },
+      "auth": {
+        "login": "Sign in",
+        "profile": "My profile"
+      },
+      "language": {
+        "label": "Language"
+      }
+    }
+  },
+
+  "it": {
+    "nav": {
+      "brand": "CV Builder",
+      "menu": {
+        "home": "Home",
+        "pricing": "Prezzi",
+        "contact": "Contatti"
+      },
+      "auth": {
+        "login": "Accedi",
+        "profile": "Il mio profilo"
+      },
+      "language": {
+        "label": "Lingua"
+      }
+    }
+  }
+}

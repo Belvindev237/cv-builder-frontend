@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import LoginForm from "../components/Auth/LoginForm";
 import RegisterForm from "../components/Auth/RegisterForm";
 
 export default function AuthPage() {
+  const { t } = useTranslation();
   const [isLogin, setIsLogin] = useState(true);
 
   const handleAuthSubmit = (data) => {
@@ -21,12 +23,12 @@ export default function AuthPage() {
               <i className="fas fa-file-invoice fa-lg"></i>
             </div>
             <h2 className="text-3xl font-black text-slate-900 tracking-tight">
-              {isLogin ? "Bon retour !" : "Rejoignez-nous"}
+              {isLogin ? t('auth_page.title') : t('auth_page.registerTitle')}
             </h2>
             <p className="mt-2 text-slate-500 font-medium">
               {isLogin
-                ? "Connectez-vous pour gérer vos CV."
-                : "Créez votre compte en quelques secondes."}
+                ? t('auth_page.subtitle')
+                : t('auth_page.registerSubtitle')}
             </p>
           </div>
 
@@ -45,12 +47,12 @@ export default function AuthPage() {
           {/* Séparateur / Switch */}
           <div className="mt-8 pt-6 border-t border-slate-100 text-center">
             <p className="text-sm text-slate-600">
-              {isLogin ? "Pas encore de compte ?" : "Déjà un compte ?"}
+              {isLogin ? t('auth_page.noAccount') : t('auth_page.alreadyAccount')}
               <button
                 onClick={() => setIsLogin(!isLogin)}
                 className="ml-2 font-bold text-blue-600 hover:text-blue-700 transition-colors"
               >
-                {isLogin ? "Créer un profil" : "Se connecter"}
+                {isLogin ? t('auth_page.createProfile') : t('auth_page.loginButton')}
               </button>
             </p>
           </div>
@@ -65,19 +67,19 @@ export default function AuthPage() {
 
         <div className="relative h-full flex flex-col items-center justify-center text-white px-12 text-center">
           <h3 className="text-4xl font-bold mb-6">
-            Plus qu'un simple CV, <br /> un propulseur de carrière.
+            {t('auth_page.promoHeadline')}
           </h3>
           <div className="grid grid-cols-2 gap-6 max-w-md">
             <div className="p-4 bg-blue-500/30 backdrop-blur-md rounded-2xl border border-blue-400/30 text-left">
               <i className="fas fa-magic mb-3 text-blue-200"></i>
               <p className="text-sm font-semibold text-blue-50">
-                Édition en temps réel
+                {t('auth_page.feature1')}
               </p>
             </div>
             <div className="p-4 bg-blue-500/30 backdrop-blur-md rounded-2xl border border-blue-400/30 text-left">
               <i className="fas fa-file-pdf mb-3 text-blue-200"></i>
               <p className="text-sm font-semibold text-blue-50">
-                Export PDF HD
+                {t('auth_page.feature2')}
               </p>
             </div>
           </div>

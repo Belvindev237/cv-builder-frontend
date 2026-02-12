@@ -1,0 +1,95 @@
+{
+  "fr": {
+    "addLanguageTitle": "Ajouter une langue",
+    "languageLabel": "Langue",
+    "languagePlaceholder": "-- Choisir une langue --",
+    "otherLanguagePlaceholder": "Entrez le nom de la langue",
+    "levelLabel": "Niveau de maîtrise",
+    "levelPlaceholder": "-- Choisir un niveau --",
+    "addButton": "Ajouter à mon CV",
+    "addedLanguagesTitle": "Langues ajoutées",
+    "noLanguageMessage": "Aucune langue enregistrée",
+    "prevButton": "← Précédent",
+    "nextButton": "Continuer",
+    "lang_names": {
+      "french": "Français",
+      "english": "Anglais",
+      "german": "Allemand",
+      "spanish": "Espagnol",
+      "italian": "Italien",
+      "arabic": "Arabe",
+      "other": "Autre (Saisir manuellement)..."
+    },
+    "levels": {
+      "native": "Langue maternelle",
+      "c2": "C2 - Maîtrise",
+      "c1": "C1 - Autonome",
+      "b2": "B2 - Avancé",
+      "b1": "B1 - Intermédiaire",
+      "a2": "A2 - Élémentaire",
+      "a1": "A1 - Débutant"
+    }
+  },
+  "en": {
+    "addLanguageTitle": "Add a language",
+    "languageLabel": "Language",
+    "languagePlaceholder": "-- Choose a language --",
+    "otherLanguagePlaceholder": "Enter the language name",
+    "levelLabel": "Proficiency level",
+    "levelPlaceholder": "-- Choose a level --",
+    "addButton": "Add to my CV",
+    "addedLanguagesTitle": "Added Languages",
+    "noLanguageMessage": "No language added",
+    "prevButton": "← Previous",
+    "nextButton": "Next",
+    "lang_names": {
+      "french": "French",
+      "english": "English",
+      "german": "German",
+      "spanish": "Spanish",
+      "italian": "Italian",
+      "arabic": "Arabic",
+      "other": "Other (Enter manually)..."
+    },
+    "levels": {
+      "native": "Native speaker",
+      "c2": "C2 - Mastery",
+      "c1": "C1 - Advanced",
+      "b2": "B2 - Upper Intermediate",
+      "b1": "B1 - Intermediate",
+      "a2": "A2 - Elementary",
+      "a1": "A1 - Beginner"
+    }
+  },
+  "it": {
+    "addLanguageTitle": "Aggiungi una lingua",
+    "languageLabel": "Lingua",
+    "languagePlaceholder": "-- Scegli una lingua --",
+    "otherLanguagePlaceholder": "Inserisci il nome della lingua",
+    "levelLabel": "Livello di competenza",
+    "levelPlaceholder": "-- Scegli un livello --",
+    "addButton": "Aggiungi al mio CV",
+    "addedLanguagesTitle": "Lingue aggiunte",
+    "noLanguageMessage": "Nessuna lingua registrata",
+    "prevButton": "← Precedente",
+    "nextButton": "Continua",
+    "lang_names": {
+      "french": "Francese",
+      "english": "Inglese",
+      "german": "Tedesco",
+      "spanish": "Spagnolo",
+      "italian": "Italiano",
+      "arabic": "Arabo",
+      "other": "Altro (Inserisci manualmente)..."
+    },
+    "levels": {
+      "native": "Madrelingua",
+      "c2": "C2 - Padronanza",
+      "c1": "C1 - Avanzato",
+      "b2": "B2 - Intermedio Superiore",
+      "b1": "B1 - Intermedio",
+      "a2": "A2 - Elementare",
+      "a1": "A1 - Principiante"
+    }
+  }
+}

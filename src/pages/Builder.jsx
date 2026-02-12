@@ -1,46 +1,94 @@
 import Stepper from "../components/SidebarProgess";
-import { useState } from "react";
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useState, useEffect, useRef } from "react"; // Ajout de useRef
+import { useParams, useNavigate } from "react-router-dom";
 
-import axios from "axios";
 import PersonInfo from "../components/Form/PersonInfo";
 import Experience from "../components/Form/Experience";
 import Education from "../components/Form/Education";
 import Competence from "../components/Form/Competence";
 import Langue from "../components/Form/Langue";
 import ResumePro from "../components/Form/Resume";
-import ResumePreview from "../components/ResumePreview";
-import { create_cv } from "../services/api";
-import { updateCv } from "../services/api";
-import { cvById } from "../services/api";
-import { useNavigate } from "react-router-dom";
+import { create_cv, updateCv, cvById } from "../services/api";
+
+import CVTemplate1 from "../components/templates/CVTemplate1";
+import CVTemplate2 from "../components/templates/CVTemplate2";
+import CVTemplate3 from "../components/templates/CVTemplate3";
+import CVTemplate4 from "../components/templates/CVTemplate4";
+import CVTemplate5 from "../components/templates/CVTemplate5";
+import CVTemplate6 from "../components/templates/CVTemplate6";
+import CVTemplate7 from "../components/templates/CVTemplate7";
+import CVTemplate8 from "../components/templates/CVTemplate8";
+import CVTemplate9 from '../components/templates/CVTemplate9';
+import CVTemplate10 from "../components/templates/CVTemplate10";
+
+/**
+ * COMPOSANT DE SCALE AUTOMATIQUE
+ * Il adapte le CV A4 (794px) à la largeur de la colonne de preview
+ */
+const PreviewScaler = ({ children }) => {
+  const containerRef = useRef(null);
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const observer = new ResizeObserver((entries) => {
+      for (let entry of entries) {
+        const parentWidth = entry.contentRect.width;
+        // On laisse une marge de 32px (p-4 de chaque côté)
+        const availableWidth = parentWidth - 64; 
+        const cvBaseWidth = 794;
+        setScale(availableWidth / cvBaseWidth);
+      }
+    });
+
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={containerRef} className="w-full h-full flex justify-center bg-gray-200 p-8 overflow-y-auto shadow-inner">
+      <div 
+        style={{ 
+          transform: `scale(${scale})`, 
+          transformOrigin: "top center",
+          width: "794px",
+          minWidth: "794px", // Empêche le template de se déformer
+          height: "1123px",
+        }}
+        className="bg-white shadow-2xl transition-transform duration-200 ease-out"
+      >
+        {children}
+      </div>
+    </div>
+  );
+};
 
 export default function Builder() {
-  const { id } = useParams();
-  const [cvData, setCvData] = useState(null);
+  const [selectedTemplate, setSelectedTemplate] = useState(null);
   const navigate = useNavigate();
-  const steps = [
-    "Infos Perso",
-    "Expérience",
-    "Compétences",
-    "Formations",
-    "Langues",
-    "Resume",
+  const { template_id, id } = useParams();
+  
+  const templates = [
+    { id: 1, name: "Moderne Bleu", component: CVTemplate1 },
+    { id: 2, name: "Minimaliste", component: CVTemplate2 },
+    { id: 3, name: "Créatif Vert", component: CVTemplate3 },
+    { id: 4, name: "Corporate", component: CVTemplate4 },
+    { id: 5, name: "Timeline Orange", component: CVTemplate5 },
+    { id: 6, name: "Minimaliste Géométrique ", component: CVTemplate6 },
+    { id: 7, name: "Minimaliste Géométrique ", component: CVTemplate7 },
+    { id: 8, name: "Minimaliste Géométrique ", component: CVTemplate8 },
+    { id: 9, name: "Minimaliste Géométrique ", component: CVTemplate9 },
+    { id: 10, name: "Minimaliste Géométrique ",component: CVTemplate10},
   ];
-  // const [step, setStep] = useState(0);
-  const [currentStep, setCurrentStep] = useState(0);
-  const onNext = () => {
-    if (currentStep < steps.length - 1) {
-      setCurrentStep((prev) => prev + 1);
-    }
-  };
 
-  const onPrev = () => {
-    if (currentStep > 0) {
-      setCurrentStep((prev) => prev - 1);
-    }
-  };
+  const isEditMode = !!id;
+  const isCreateMode = !!template_id;
+  
+  const SelectedComponent = templates.find((t) => t.id === selectedTemplate)?.component;
+
+  //const [cvData, setCvData] = useState(null);
+  const steps = ["Infos Perso", "Expérience", "Compétences", "Formations", "Langues", "Resume"];
+  const [currentStep, setCurrentStep] = useState(0);
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -51,158 +99,75 @@ export default function Builder() {
     softSkills: [],
     languages: [],
   });
+
+  const onNext = () => { if (currentStep < steps.length - 1) setCurrentStep((prev) => prev + 1); };
+  const onPrev = () => { if (currentStep > 0) setCurrentStep((prev) => prev - 1); };
+
+  // --- USE EFFECTS DE CHARGEMENT (RESTO ET API) ---
   useEffect(() => {
-    // 1. Chercher si des données ont été stockées avant la connexion
     const savedForm = localStorage.getItem("pending_cv_form");
     const step = localStorage.getItem("step");
-
     if (savedForm) {
       try {
-        const parsedForm = JSON.parse(savedForm);
-
-        // 2. On remet les données dans le State React
-        // Cela va remplir automatiquement tous les champs de ton formulaire
-        setFormData(parsedForm);
-
-        // 3. Optionnel : restaurer l'étape du formulaire
-        // const savedStep = localStorage.getItem("pending_step");
-        // if (savedStep) setStep(parseInt(savedStep));
-        if (step) {
-          setCurrentStep(parseInt(step));
-        }
-
-        console.log("Formulaire restauré avec succès !");
-
-        // 4. Nettoyage : On supprime du localStorage pour éviter que
-        // le formulaire ne se recharge tout seul la prochaine fois
+        setFormData(JSON.parse(savedForm));
+        if (step) setCurrentStep(parseInt(step));
         localStorage.removeItem("pending_cv_form");
         localStorage.removeItem("step");
-        // localStorage.removeItem("pending_step");
-      } catch (error) {
-        console.error(
-          "Erreur lors de la lecture des données stockées :",
-          error,
-        );
-      }
+      } catch (e) { console.error(e); }
     }
-  }, []); // [] signifie que ça ne s'exécute qu'une seule fois à l'ouverture de la page
-  // Ici on affiche le formulaire dynamiquement en fonction des donnees a recuperer
+  }, []);
 
   useEffect(() => {
-    // On ne charge les données que si on est en mode "Édition" (donc si ID existe)
-    if (id) {
+    if (isEditMode) {
       const fetchCV = async () => {
         try {
-          const data = await cvById(id); // On récupère les données via l'API
-          setFormData(data); // On remplit le formulaire avec ces données
-        } catch (error) {
-          console.error("Erreur de chargement", error);
-        }
+          const data = await cvById(id);
+          setFormData(data);
+          setSelectedTemplate(data.template_id ? parseInt(data.template_id) : 1);
+        } catch (error) { console.error("Erreur chargement", error); }
       };
       fetchCV();
+    } else if (isCreateMode) {
+      const tIdInt = parseInt(template_id, 10);
+      setSelectedTemplate(tIdInt);
+      setFormData((prev) => ({ ...prev, template_id: tIdInt }));
     }
-  }, [id]); // S'exécute quand l'ID change ou au chargement
-  const renderStep = () => {
-    switch (currentStep) {
-      case 0:
-        return (
-          <PersonInfo
-            formData={formData}
-            setFormData={setFormData}
-            Next={onNext}
-          />
-        );
-      case 1:
-        return (
-          <Experience
-            formData={formData}
-            setFormData={setFormData}
-            Prev={onPrev}
-            Next={onNext}
-          />
-        );
+  }, [template_id, id, isEditMode, isCreateMode]);
 
-      case 2:
-        return (
-          <Education
-            formData={formData}
-            setFormData={setFormData}
-            Prev={onPrev}
-            Next={onNext}
-          />
-        );
-      case 3:
-        return (
-          <Competence
-            formData={formData}
-            setFormData={setFormData}
-            Prev={onPrev}
-            Next={onNext}
-          />
-        );
-      case 4:
-        return (
-          <Langue
-            formData={formData}
-            setFormData={setFormData}
-            Prev={onPrev}
-            Next={onNext}
-          />
-        );
-      case 5:
-        return (
-          <ResumePro
-            formData={formData}
-            setFormData={setFormData}
-            Prev={onPrev}
-            Next={handleSave}
-          />
-        );
-      default:
-        return <div>Étape non implémentée</div>;
-    }
-  };
+  // --- LOGIQUE DE SAUVEGARDE ---
   const handleSave = async () => {
-    // Transformation du format React vers le format Python (Pydantic)
     const payload = {
       first_name: formData.firstName,
       last_name: formData.lastName,
+      template_id: formData.template_id,
       job_title: formData.jobTitle,
       address: formData.address,
-      code_postal: formData.postalCode, // postalCode -> code_postal
+      code_postal: formData.postalCode,
       city: formData.city,
-      phone_number: formData.phone, // phone -> phone_number
+      phone_number: formData.phone,
       email: formData.email,
-      site: formData.website || "", // website -> site
+      site: formData.website || "",
       summary: formData.summary,
       hobbies: formData.hobbies,
-
-      // On renomme experienceList en experiences
       experiences: (formData.experienceList || []).map((exp) => ({
         job_title: exp.jobTitle,
         company: exp.company,
-        start_date: exp.startDate,
-        end_date: exp.endDate,
+        start_date: exp.startDate, end_date: exp.endDate,
         description: exp.description,
       })),
-
-      // On renomme educationList en educations
-      educations: formData.educationList.map((edu) => ({
+      educations: (formData.educationList || []).map((edu) => ({
         degree: edu.degree || "",
         institution: edu.institution || "",
-        start_date: edu.startDate || "",
-        end_date: edu.endDate || "",
-        domain: edu.fieldOfStudy || "", // <--- C'est ce champ qui manquait !
+        start_date: edu.startDate || "", end_date: edu.endDate || "",
+        domain: edu.fieldOfStudy || "",
       })),
-      // On aligne la structure Skill
       skill: {
         technical_skills: formData.skill?.technicalSkills || [],
         soft_skills: formData.skill?.softSkills || [],
       },
-
       languages: formData.languages || [],
     };
-    console.log("État actuel avant sauvegarde:", cvData);
+
     const token = localStorage.getItem("token");
     if (!token || token === "null" || token === "undefined") {
       localStorage.setItem("pendingCv", JSON.stringify(payload));
@@ -211,44 +176,57 @@ export default function Builder() {
       navigate("/auth");
       return;
     }
+
     try {
       if (id) {
         await updateCv(id, payload);
-        //   alert("Cv mise à jour");
         navigate(`/visualisation/${id}`);
-        return;
+      } else {
+        const result = await create_cv(payload);
+        navigate(`/visualisation/${result.id}`);
       }
-
-      console.log("Payload formaté envoyé :", payload);
-      const result = await create_cv(payload);
-      const cv_id = result.id;
-      //alert("🚀 CV enregistré avec succès !");
-      navigate(`/visualisation/${cv_id}`);
     } catch (error) {
-      console.error("Erreur 422 détaillée :", error.response?.data?.detail);
-      //  alert("Erreur de validation. Vérifiez la console F12.");
+      console.error(error);
+    }
+  };
+
+  const renderStep = () => {
+    switch (currentStep) {
+      case 0: return <PersonInfo formData={formData} setFormData={setFormData} Next={onNext} />;
+      case 1: return <Experience formData={formData} setFormData={setFormData} Prev={onPrev} Next={onNext} />;
+      case 2: return <Education formData={formData} setFormData={setFormData} Prev={onPrev} Next={onNext} />;
+      case 3: return <Competence formData={formData} setFormData={setFormData} Prev={onPrev} Next={onNext} />;
+      case 4: return <Langue formData={formData} setFormData={setFormData} Prev={onPrev} Next={onNext} />;
+      case 5: return <ResumePro formData={formData} setFormData={setFormData} Prev={onPrev} Next={handleSave} />;
+      default: return <div>Étape non implémentée</div>;
     }
   };
 
   return (
-    <div className="min-h-screen w-full flex flex-col lg:flex-row">
-      {/* On enlève 'hidden' et on change la gestion de la largeur */}
-      <div className="w-full md:w-80 bg-gray-100 border-b md:border-r">
+    <div className="h-screen w-full flex flex-col lg:flex-row overflow-hidden bg-white">
+      {/* SIDEBAR STEPPER (Fixe à gauche) */}
+      <div className="w-full lg:w-80 bg-gray-50 border-b lg:border-r flex-shrink-0">
         <Stepper currentStep={currentStep} />
       </div>
-      <div className="flex-1 bg-white p-6 overflow-y-auto">
-        {renderStep()}
-        {/*    {currentStep === 0 && (
-          <PersonInfo
-            formData={formData}
-            setFormData={setFormData}
-            Next={onNext}
-          />
-        )}*/}
+
+      {/* ZONE FORMULAIRE (Scrollable) */}
+      <div className="flex-1 overflow-y-auto p-4 md:p-10">
+        <div className="max-w-2xl mx-auto">
+          {renderStep()}
+        </div>
       </div>
 
-      <div className="hidden lg:block w-120 bg-gray-100 border-l p-4">
-        <ResumePreview formData={formData} />
+      {/* ZONE PREVIEW (Adaptative) */}
+      <div className="hidden xl:block w-[500px] 2xl:w-[650px] border-l flex-shrink-0">
+        <PreviewScaler>
+          {SelectedComponent ? (
+            <SelectedComponent formData={formData} />
+          ) : (
+            <div className="flex items-center justify-center h-full text-gray-400">
+              Sélectionnez un modèle
+            </div>
+          )}
+        </PreviewScaler>
       </div>
     </div>
   );

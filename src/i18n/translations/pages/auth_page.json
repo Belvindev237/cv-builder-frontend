@@ -1,0 +1,47 @@
+{
+  "fr": {
+    "auth_page": {
+      "title": "Bon retour !",
+      "subtitle": "Connectez-vous pour gérer vos CV.",
+      "registerTitle": "Rejoignez-nous",
+      "registerSubtitle": "Créez votre compte en quelques secondes.",
+      "noAccount": "Pas encore de compte ?",
+      "createProfile": "Créer un profil",
+      "alreadyAccount": "Déjà un compte ?",
+      "loginButton": "Se connecter",
+      "promoHeadline": "Plus qu'un simple CV, un propulseur de carrière.",
+      "feature1": "Édition en temps réel",
+      "feature2": "Export PDF HD"
+    }
+  },
+  "en": {
+    "auth_page": {
+      "title": "Welcome back!",
+      "subtitle": "Log in to manage your CVs.",
+      "registerTitle": "Join us",
+      "registerSubtitle": "Create your account in seconds.",
+      "noAccount": "Don't have an account yet?",
+      "createProfile": "Create profile",
+      "alreadyAccount": "Already have an account?",
+      "loginButton": "Log in",
+      "promoHeadline": "More than just a CV, a career booster.",
+      "feature1": "Real-time editing",
+      "feature2": "HD PDF export"
+    }
+  },
+  "it": {
+    "auth_page": {
+      "title": "Bentornato!",
+      "subtitle": "Accedi per gestire i tuoi CV.",
+      "registerTitle": "Unisciti a noi",
+      "registerSubtitle": "Crea il tuo account in pochi secondi.",
+      "noAccount": "Non hai ancora un account?",
+      "createProfile": "Crea un profilo",
+      "alreadyAccount": "Hai già un account?",
+      "loginButton": "Accedi",
+      "promoHeadline": "Più di un semplice CV, un acceleratore di carriera.",
+      "feature1": "Modifica in tempo reale",
+      "feature2": "Esporta PDF in alta definizione"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "fr": {
+    "competence": {
+      "technicalSkills": "Compétences Techniques",
+      "technicalPlaceholder": "ex: React, Python...",
+      "softSkills": "Soft Skills",
+      "softPlaceholder": "ex: Leadership...",
+      "prev": "Précédent",
+      "next": "Suivant"
+    }
+  },
+  "en": {
+    "competence": {
+      "technicalSkills": "Technical Skills",
+      "technicalPlaceholder": "ex: React, Python...",
+      "softSkills": "Soft Skills",
+      "softPlaceholder": "ex: Leadership...",
+      "prev": "Previous",
+      "next": "Next"
+    }
+  },
+  "it": {
+    "competence": {
+      "technicalSkills": "Competenze Tecniche",
+      "technicalPlaceholder": "es: React, Python...",
+      "softSkills": "Soft Skills",
+      "softPlaceholder": "es: Leadership...",
+      "prev": "Precedente",
+      "next": "Successivo"
+    }
+  }
+}

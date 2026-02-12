@@ -1,0 +1,59 @@
+{
+  "fr": {
+    "resume_pro": {
+      "title": "Résumé Professionnel",
+      "description": "Présentez-vous en quelques phrases. Mettez en avant vos points forts et votre objectif de carrière.",
+      "summaryPlaceholder": "Ex: Passionné par le développement web avec 5 ans d'expérience...",
+      "charCountLabel": "caractères",
+      "hobbiesTitle": "Centres d’intérêt & Hobbies",
+      "hobbiesDescription": "Qu'est-ce qui vous passionne en dehors du travail ? Cela permet de montrer votre personnalité.",
+      "hobbiesPlaceholder": "Ex: Photographie, Marathon, Piano, Bénévolat...",
+      "hobbiesTip": "Astuce : Séparez vos centres d'intérêt par des virgules.",
+      "tips": [
+        { "label": "💡 Conseil 1", "text": "Soyez direct : évitez les phrases trop longues." },
+        { "label": "💡 Conseil 2", "text": "Utilisez des mots-clés liés à votre métier." },
+        { "label": "💡 Conseil 3", "text": "Mentionnez un résultat ou une spécialité forte." }
+      ],
+      "prevButton": "Précédent",
+      "nextButton": "Continuer"
+    }
+  },
+  "en": {
+    "resume_pro": {
+      "title": "Professional Summary",
+      "description": "Introduce yourself in a few sentences. Highlight your strengths and career goals.",
+      "summaryPlaceholder": "Ex: Passionate about web development with 5 years of experience...",
+      "charCountLabel": "characters",
+      "hobbiesTitle": "Interests & Hobbies",
+      "hobbiesDescription": "What are you passionate about outside of work? This helps show your personality.",
+      "hobbiesPlaceholder": "Ex: Photography, Marathon, Piano, Volunteering...",
+      "hobbiesTip": "Tip: Separate your interests with commas.",
+      "tips": [
+        { "label": "💡 Tip 1", "text": "Be direct: avoid sentences that are too long." },
+        { "label": "💡 Tip 2", "text": "Use keywords related to your profession." },
+        { "label": "💡 Tip 3", "text": "Mention a strong result or specialty." }
+      ],
+      "prevButton": "Previous",
+      "nextButton": "Continue"
+    }
+  },
+  "it": {
+    "resume_pro": {
+      "title": "Riassunto Professionale",
+      "description": "Presentati in poche frasi. Evidenzia i tuoi punti di forza e i tuoi obiettivi professionali.",
+      "summaryPlaceholder": "Es: Appassionato di sviluppo web con 5 anni di esperienza...",
+      "charCountLabel": "caratteri",
+      "hobbiesTitle": "Interessi & Hobby",
+      "hobbiesDescription": "Cosa ti appassiona al di fuori del lavoro? Questo aiuta a mostrare la tua personalità.",
+      "hobbiesPlaceholder": "Es: Fotografia, Maratona, Pianoforte, Volontariato...",
+      "hobbiesTip": "Suggerimento: separa i tuoi interessi con delle virgole.",
+      "tips": [
+        { "label": "💡 Consiglio 1", "text": "Sii diretto: evita frasi troppo lunghe." },
+        { "label": "💡 Consiglio 2", "text": "Usa parole chiave legate al tuo lavoro." },
+        { "label": "💡 Consiglio 3", "text": "Menziona un risultato o una specialità forte." }
+      ],
+      "prevButton": "Precedente",
+      "nextButton": "Continua"
+    }
+  }
+}

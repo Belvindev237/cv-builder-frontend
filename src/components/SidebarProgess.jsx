@@ -1,17 +1,18 @@
-//import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function SidebarProgress({ currentStep }) {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const sections = [
-    "Infos personnelles",
-    "Expériences",
-    "Formation",
-    "Compétences",
-    "Langues",
-    "Résumé professionnel",
-    "Export",
+    t('side_bar_progress.sections.personal'),
+    t('side_bar_progress.sections.work_experience'),
+    t('side_bar_progress.sections.education'),
+    t('side_bar_progress.sections.skills'),
+    t('side_bar_progress.sections.languages'),
+    t('side_bar_progress.sections.summary'),
+    t('side_bar_progress.sections.export'),
   ];
 
   return (
@@ -21,10 +22,10 @@ export default function SidebarProgress({ currentStep }) {
         <div className="mb-4 lg:mb-8 flex justify-between items-center lg:block">
           <div>
             <h2 className="text-lg lg:text-xl font-black text-white tracking-tight">
-              Création CV
+              {t('side_bar_progress.title')}
             </h2>
             <p className="text-[10px] lg:text-xs text-slate-500 uppercase font-bold tracking-widest">
-              Étape {currentStep + 1} / {sections.length}
+              {t('side_bar_progress.step')} {currentStep + 1} / {sections.length}
             </p>
           </div>
 
@@ -32,7 +33,7 @@ export default function SidebarProgress({ currentStep }) {
           <button
             onClick={() => navigate("/")}
             className="lg:hidden p-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-xl transition-colors"
-            aria-label="Retour à l'accueil"
+            aria-label={t('side_bar_progress.backHome')}
           >
             🏠
           </button>
@@ -105,7 +106,7 @@ export default function SidebarProgress({ currentStep }) {
           <span className="text-lg group-hover:scale-120 transition-transform">
             🏠
           </span>
-          <span>Retour à l'Acceuil</span>
+          <span>{t('side_bar_progress.backHome')}</span>
         </button>
       </div>
     </aside>

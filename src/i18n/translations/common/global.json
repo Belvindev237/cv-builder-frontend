@@ -1,0 +1,38 @@
+{
+  "fr": {
+    "placeholders": {
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "jobTitle": "Intitulé du poste",
+      "email": "email@exemple.com",
+      "phone": "000 000 000",
+      "address": "Adresse complète",
+      "summary": "Votre résumé professionnel s'affichera ici...",
+      "hobbies": "Ex: Photographie, Tennis, Lecture..."
+    }
+  },
+  "en": {
+    "placeholders": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "jobTitle": "Job Title",
+      "email": "email@example.com",
+      "phone": "+1 000 000 000",
+      "address": "Full Address",
+      "summary": "Your professional summary will appear here...",
+      "hobbies": "e.g. Photography, Tennis, Reading..."
+    }
+  },
+  "it": {
+    "placeholders": {
+      "firstName": "Nome",
+      "lastName": "Cognome",
+      "jobTitle": "Titolo di lavoro",
+      "email": "email@esempio.com",
+      "phone": "+39 000 000 000",
+      "address": "Indirizzo completo",
+      "summary": "Il tuo riassunto professionale apparirà qui...",
+      "hobbies": "es: Fotografia, Tennis, Lettura..."
+    }
+  }
+}

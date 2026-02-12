@@ -1,0 +1,62 @@
+{
+  "fr": {
+    "education": {
+      "titleAdd": "Ajouter une formation",
+      "degree": "Diplôme",
+      "degreePlaceholder": "Ex: Master en Informatique",
+      "institution": "Institution",
+      "institutionPlaceholder": "Ex: Université de Paris",
+      "startDate": "Date de début",
+      "endDate": "Date de fin",
+      "fieldOfStudy": "Domaine d'étude",
+      "fieldPlaceholder": "Ex: Développement Logiciel",
+      "addButton": "+ Ajouter la formation",
+      "recordedHistory": "Cursus enregistré",
+      "noEducation": "Aucun diplôme renseigné",
+      "prev": "← Précédent",
+      "next": "Suivant",
+      "countLabel": "diplômes",
+      "present": "Présent"
+    }
+  },
+  "en": {
+    "education": {
+      "titleAdd": "Add Education",
+      "degree": "Degree",
+      "degreePlaceholder": "e.g. Master in Computer Science",
+      "institution": "Institution",
+      "institutionPlaceholder": "e.g. University of London",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "fieldOfStudy": "Field of Study",
+      "fieldPlaceholder": "e.g. Software Development",
+      "addButton": "+ Add Education",
+      "recordedHistory": "Recorded History",
+      "noEducation": "No education added",
+      "prev": "← Previous",
+      "next": "Next",
+      "countLabel": "degrees",
+      "present": "Present"
+    }
+  },
+  "it": {
+    "education": {
+      "titleAdd": "Aggiungi Formazione",
+      "degree": "Titolo di Studio",
+      "degreePlaceholder": "Es: Laurea in Informatica",
+      "institution": "Istituzione",
+      "institutionPlaceholder": "Es: Università di Roma",
+      "startDate": "Data Inizio",
+      "endDate": "Data Fine",
+      "fieldOfStudy": "Campo di Studio",
+      "fieldPlaceholder": "Es: Sviluppo Software",
+      "addButton": "+ Aggiungi Formazione",
+      "recordedHistory": "Percorso registrato",
+      "noEducation": "Nessun titolo aggiunto",
+      "prev": "← Precedente",
+      "next": "Successivo",
+      "countLabel": "titoli",
+      "present": "Presente"
+    }
+  }
+}

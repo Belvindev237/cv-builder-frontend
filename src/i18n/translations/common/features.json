@@ -1,0 +1,76 @@
+{
+  "fr": {
+    "features": {
+      "section": {
+        "title": "Un CV efficace, prêt à impressionner",
+        "subtitle": "en quelques minutes",
+        "description": "Tous les outils dont vous avez besoin pour créer un CV qui fait la différence"
+      },
+      "cards": {
+        "easy": {
+          "title": "Facile à utiliser",
+          "description": "Un éditeur intuitif pour créer votre CV rapidement et sans effort."
+        },
+        "templates": {
+          "title": "Modèles professionnels",
+          "description": "Des modèles modernes et professionnels adaptés à tous les métiers."
+        },
+        "share": {
+          "title": "Partage rapide",
+          "description": "Téléchargez ou partagez votre CV en un clic."
+        }
+      },
+      "cta": "COMMENCER MAINTENANT"
+    }
+  },
+
+  "en": {
+    "features": {
+      "section": {
+        "title": "A powerful CV, ready to impress",
+        "subtitle": "in just a few minutes",
+        "description": "All the tools you need to create a CV that stands out"
+      },
+      "cards": {
+        "easy": {
+          "title": "Easy to use",
+          "description": "An intuitive editor to create your CV quickly and effortlessly."
+        },
+        "templates": {
+          "title": "Professional templates",
+          "description": "Modern and professional templates suitable for all industries."
+        },
+        "share": {
+          "title": "Quick sharing",
+          "description": "Download or share your CV in just one click."
+        }
+      },
+      "cta": "GET STARTED NOW"
+    }
+  },
+
+  "it": {
+    "features": {
+      "section": {
+        "title": "Un CV efficace, pronto a impressionare",
+        "subtitle": "in pochi minuti",
+        "description": "Tutti gli strumenti necessari per creare un CV che fa la differenza"
+      },
+      "cards": {
+        "easy": {
+          "title": "Facile da usare",
+          "description": "Un editor intuitivo per creare il tuo CV in modo rapido e semplice."
+        },
+        "templates": {
+          "title": "Modelli professionali",
+          "description": "Modelli moderni e professionali adatti a tutti i settori."
+        },
+        "share": {
+          "title": "Condivisione rapida",
+          "description": "Scarica o condividi il tuo CV con un solo clic."
+        }
+      },
+      "cta": "INIZIA ORA"
+    }
+  }
+}

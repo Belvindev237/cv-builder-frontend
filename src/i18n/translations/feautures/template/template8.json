@@ -1,0 +1,33 @@
+{
+  "fr": {
+    "template8": {
+      "expertise": "Expertise",
+      "languages": "Langues",
+      "passions": "Passions",
+      "journey": "Parcours Professionnel",
+      "education": "Académique",
+      "now": "Aujourd'hui"
+    }
+  },
+  "en": {
+    "template8": {
+      "expertise": "Expertise",
+      "languages": "Languages",
+      "passions": "Passions",
+      "journey": "Professional Journey",
+      "education": "Academic",
+      "now": "Now"
+    }
+  },
+  "it": {
+    "template8": {
+      "profil":"Riassunto professionale",
+      "expertise": "Competenze",
+      "languages": "Lingue",
+      "passions": "Passioni",
+      "journey": "Percorso Professionale",
+      "education": "Formazione",
+      "now": "Oggi"
+    }
+  }
+}

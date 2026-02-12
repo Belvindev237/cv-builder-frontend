@@ -1,0 +1,59 @@
+{
+  "fr": {
+    "experience": {
+      "addTitle": "Ajouter une expérience",
+      "jobTitle": "Intitulé du poste",
+      "company": "Entreprise",
+      "startDate": "Date de début",
+      "endDate": "Date de fin",
+      "description": "Missions & Réalisations",
+      "descriptionPlaceholder": "Décrivez vos tâches...",
+      "addButton": "Ajouter l'expérience",
+      "listTitle": "Parcours Professionnel",
+      "positions": "postes",
+      "present": "Présent",
+      "deleteButton": "Supprimer",
+      "noExperience": "Aucune expérience renseignée",
+      "prev": "Précédent",
+      "next": "Continuer"
+    }
+  },
+  "en": {
+    "experience": {
+      "addTitle": "Add an experience",
+      "jobTitle": "Job Title",
+      "company": "Company",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "description": "Missions & Achievements",
+      "descriptionPlaceholder": "Describe your tasks...",
+      "addButton": "Add experience",
+      "listTitle": "Professional Background",
+      "positions": "positions",
+      "present": "Present",
+      "deleteButton": "Delete",
+      "noExperience": "No experience added",
+      "prev": "Previous",
+      "next": "Continue"
+    }
+  },
+  "it": {
+    "experience": {
+      "addTitle": "Aggiungi un'esperienza",
+      "jobTitle": "Titolo del lavoro",
+      "company": "Azienda",
+      "startDate": "Data di inizio",
+      "endDate": "Data di fine",
+      "description": "Missioni & Realizzazioni",
+      "descriptionPlaceholder": "Descrivi i tuoi compiti...",
+      "addButton": "Aggiungi esperienza",
+      "listTitle": "Percorso Professionale",
+      "positions": "posizioni",
+      "present": "Presente",
+      "deleteButton": "Elimina",
+      "noExperience": "Nessuna esperienza aggiunta",
+      "prev": "Precedente",
+      "next": "Continua"
+    }
+  }
+}

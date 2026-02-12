@@ -1,0 +1,84 @@
+{
+  "fr": {
+    "visualisation": {
+      "sidebar": {
+        "title": "Personnalisation du CV",
+        "subtitle": "Templates de CV",
+        "select_template": "Sélectionnez un modèle",
+        "download_pdf": "Télécharger en PDF",
+        "generating": "Génération...",
+        "my_documents": "MES DOCUMENTS"
+      },
+      "templates": {
+        "1": "Moderne Bleu",
+        "2": "Minimaliste",
+        "3": "Créatif Vert",
+        "4": "Corporate",
+        "5": "Timeline Orange",
+        "6": " Minimaliste Géométrique ",
+        "7": " Magazine Editorial ",
+        "8": " Asymétrique Créatif ",
+        "9": "Terminal Tech",
+        "10":"Luxe Élégant"
+      },
+      "main": {
+        "loading_cv": "Chargement du CV..."
+      }
+    }
+  },
+  "en": {
+    "visualisation": {
+      "sidebar": {
+        "title": "CV Customization",
+        "subtitle": "CV Templates",
+        "select_template": "Select a template",
+        "download_pdf": "Download PDF",
+        "generating": "Generating...",
+        "my_documents": "MY DOCUMENTS"
+      },
+      "templates": {
+        "1": "Modern Blue",
+        "2": "Minimalist",
+        "3": "Creative Green",
+        "4": "Corporate",
+        "5": "Timeline Orange",
+        "6":"Geometric Minimalist",
+        "7": " Magazine Editorial ",
+        "8": "Creative Asymmetric",
+        "9": "Tech Terminal ",
+        "10":"Elegant Luxury"
+      },
+      "main": {
+        "loading_cv": "Loading CV..."
+      }
+    }
+  },
+  "it": {
+    "visualisation": {
+      "sidebar": {
+        "title": "Personalizzazione del CV",
+        "subtitle": "Modelli di CV",
+        "select_template": "Seleziona un modello",
+        "download_pdf": "Scarica in PDF",
+        "generating": "Generazione...",
+        "my_documents": "I MIEI DOCUMENTI"
+      },
+      "templates": {
+        "1": "Moderno Blu",
+        "2": "Minimalista",
+        "3": "Creativo Verde",
+        "4": "Corporate",
+        "5": "Timeline Arancione",
+        "6":"Minimalista Geometrico",
+        "7": "Editoriale per Rivista",
+        "8": "Creativo Asimmetrico",
+        "9": "Terminal Tech",
+        "10":"Lusso Elegante"
+
+      },
+      "main": {
+        "loading_cv": "Caricamento del CV..."
+      }
+    }
+  }
+}

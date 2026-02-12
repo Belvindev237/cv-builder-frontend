@@ -30,6 +30,7 @@ const mapDBToFrontend = (data) => {
     website: data.site,
     summary: data.summary,
     hobbies: data.hobbies,
+    template_id: data.template_id,
     //On garde les listes telles quelles si les objets internes sont déjà gérés
     experienceList: data.experiences || [],
     educationList: data.educations || [],
@@ -40,7 +41,7 @@ const mapDBToFrontend = (data) => {
     languages: data.languages || [],
   };
 };
-export const login = async (email, password) => {
+export const loginAPI = async (email, password) => {
   const response = await api.post("/auth/login", { email, password });
   return response.data;
 };

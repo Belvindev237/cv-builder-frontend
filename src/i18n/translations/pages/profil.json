@@ -1,0 +1,44 @@
+{
+  "fr": {
+    "profil": {
+      "dashboardTitle": "Mon Tableau de bord",
+      "dashboardSubtitle": "Gérez vos curriculum vitae",
+      "createCv": "Créer un nouveau CV",
+      "history": "Historique",
+      "goHome": "Retourner à l'Accueil",
+      "logout": "Déconnexion",
+      "edit": "ÉDITER",
+      "view": "VOIR",
+      "noCvMessage": "Vous n'avez pas encore créé de CV.",
+      "newCv": "Nouveau CV"
+    }
+  },
+  "en": {
+    "profil": {
+      "dashboardTitle": "My Dashboard",
+      "dashboardSubtitle": "Manage your CVs",
+      "createCv": "Create a new CV",
+      "history": "History",
+      "goHome": "Return to Home",
+      "logout": "Logout",
+      "edit": "EDIT",
+      "view": "VIEW",
+      "noCvMessage": "You haven't created a CV yet.",
+      "newCv": "New CV"
+    }
+  },
+  "it": {
+    "profil": {
+      "dashboardTitle": "La mia Dashboard",
+      "dashboardSubtitle": "Gestisci i tuoi curriculum vitae",
+      "createCv": "Crea un nuovo CV",
+      "history": "Storico",
+      "goHome": "Torna alla Home",
+      "logout": "Disconnetti",
+      "edit": "MODIFICA",
+      "view": "VEDI",
+      "noCvMessage": "Non hai ancora creato CV.",
+      "newCv": "Nuovo CV"
+    }
+  }
+}

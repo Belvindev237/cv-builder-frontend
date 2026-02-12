@@ -169,7 +169,7 @@ export default function CVPreview({ formData }) {
                       {exp.company}
                     </p>
                     <p className="text-[11px] text-slate-600 leading-relaxed whitespace-pre-line text-left">
-                      {exp.job_description}
+                      {exp.description}
                     </p>
                   </div>
                 ))

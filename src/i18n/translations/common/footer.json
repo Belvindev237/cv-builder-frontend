@@ -1,0 +1,130 @@
+{
+  "fr": {
+    "footer": {
+      "brand": {
+        "name": "CV Builder",
+        "description": "Créez des CV professionnels en quelques minutes avec nos modèles premium."
+      },
+      "sections": {
+        "product": {
+          "title": "Produit",
+          "links": {
+            "templates": "Modèles",
+            "examples": "Exemples",
+            "pricing": "Tarifs"
+          }
+        },
+        "resources": {
+          "title": "Ressources",
+          "links": {
+            "blog": "Blog",
+            "guides": "Guides",
+            "support": "Support"
+          }
+        },
+        "company": {
+          "title": "Entreprise",
+          "links": {
+            "about": "À propos",
+            "contact": "Contact",
+            "careers": "Carrières"
+          }
+        }
+      },
+      "legal": {
+        "copyright": "Tous droits réservés.",
+        "links": {
+          "legal": "Mentions légales",
+          "privacy": "Confidentialité",
+          "terms": "CGU"
+        }
+      }
+    }
+  },
+
+  "en": {
+    "footer": {
+      "brand": {
+        "name": "CV Builder",
+        "description": "Create professional resumes in just a few minutes with our premium templates."
+      },
+      "sections": {
+        "product": {
+          "title": "Product",
+          "links": {
+            "templates": "Templates",
+            "examples": "Examples",
+            "pricing": "Pricing"
+          }
+        },
+        "resources": {
+          "title": "Resources",
+          "links": {
+            "blog": "Blog",
+            "guides": "Guides",
+            "support": "Support"
+          }
+        },
+        "company": {
+          "title": "Company",
+          "links": {
+            "about": "About",
+            "contact": "Contact",
+            "careers": "Careers"
+          }
+        }
+      },
+      "legal": {
+        "copyright": "All rights reserved.",
+        "links": {
+          "legal": "Legal notice",
+          "privacy": "Privacy Policy",
+          "terms": "Terms of Use"
+        }
+      }
+    }
+  },
+
+  "it": {
+    "footer": {
+      "brand": {
+        "name": "CV Builder",
+        "description": "Crea curriculum professionali in pochi minuti con i nostri modelli premium."
+      },
+      "sections": {
+        "product": {
+          "title": "Prodotto",
+          "links": {
+            "templates": "Modelli",
+            "examples": "Esempi",
+            "pricing": "Prezzi"
+          }
+        },
+        "resources": {
+          "title": "Risorse",
+          "links": {
+            "blog": "Blog",
+            "guides": "Guide",
+            "support": "Supporto"
+          }
+        },
+        "company": {
+          "title": "Azienda",
+          "links": {
+            "about": "Chi siamo",
+            "contact": "Contatti",
+            "careers": "Carriere"
+          }
+        }
+      },
+      "legal": {
+        "copyright": "Tutti i diritti riservati.",
+        "links": {
+          "legal": "Note legali",
+          "privacy": "Privacy",
+          "terms": "Condizioni d'uso"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "fr": {
+    "register": {
+      "fullNameLabel": "Nom complet",
+      "fullNamePlaceholder": "Miguel Belvin",
+      "emailLabel": "Email",
+      "emailPlaceholder": "nom@exemple.com",
+      "passwordLabel": "Mot de passe",
+      "confirmPasswordLabel": "Confirmer",
+      "passwordPlaceholder": "••••",
+      "submit": "Créer mon compte",
+      "success": "Inscription réussie !",
+      "passwordMismatch": "Les mots de passe ne correspondent pas !",
+      "error": "Erreur d'inscription"
+    }
+  },
+
+  "en": {
+    "register": {
+      "fullNameLabel": "Full name",
+      "fullNamePlaceholder": "Miguel Belvin",
+      "emailLabel": "Email",
+      "emailPlaceholder": "name@example.com",
+      "passwordLabel": "Password",
+      "confirmPasswordLabel": "Confirm",
+      "passwordPlaceholder": "••••",
+      "submit": "Create account",
+      "success": "Registration successful!",
+      "passwordMismatch": "Passwords do not match!",
+      "error": "Registration error"
+    }
+  },
+
+  "it": {
+    "register": {
+      "fullNameLabel": "Nome completo",
+      "fullNamePlaceholder": "Miguel Belvin",
+      "emailLabel": "Email",
+      "emailPlaceholder": "nome@esempio.com",
+      "passwordLabel": "Password",
+      "confirmPasswordLabel": "Conferma",
+      "passwordPlaceholder": "••••",
+      "submit": "Crea account",
+      "success": "Registrazione riuscita!",
+      "passwordMismatch": "Le password non coincidono!",
+      "error": "Errore di registrazione"
+    }
+  }
+}

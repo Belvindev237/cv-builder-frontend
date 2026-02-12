@@ -1,0 +1,20 @@
+{
+  "fr": {
+    
+      "log": "Connexion",
+      "register": "Créer un compte"
+    
+  },
+  "en": {
+   
+      "log": "Log in",
+      "register": "Sign up"
+  
+  },
+  "it": {
+    
+      "log": "Accedi",
+      "register": "Registrati"
+   
+  }
+}

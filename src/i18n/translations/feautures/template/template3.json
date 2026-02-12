@@ -1,0 +1,35 @@
+{
+  "fr": {
+    "template3": {
+      "about": "À propos",
+      "experience": "Expériences",
+      "education": "Formation",
+      "skills": "Compétences",
+      "languages": "Langues",
+      "hobbies": "Loisirs",
+      "present": "Présent"
+    }
+  },
+  "en": {
+    "template3": {
+      "about": "About Me",
+      "experience": "Experience",
+      "education": "Education",
+      "skills": "Skills",
+      "languages": "Languages",
+      "hobbies": "Hobbies",
+      "present": "Present"
+    }
+  },
+  "it": {
+    "template3": {
+      "about": "Profilo",
+      "experience": "Esperienze",
+      "education": "Formazione",
+      "skills": "Competenze",
+      "languages": "Lingue",
+      "hobbies": "Hobby",
+      "present": "Presente"
+    }
+  }
+}

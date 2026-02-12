@@ -1,0 +1,50 @@
+{
+  "fr": {
+    "side_bar_progress": {
+      "title": "Création CV",
+      "step": "Étape",
+      "backHome": "Retour à l'accueil",
+      "sections": {
+        "personal": "Infos personnelles",
+        "work_experience": "Expériences",
+        "education": "Formation",
+        "skills": "Compétences",
+        "languages": "Langues",
+        "summary": "Résumé professionnel",
+        "export": "Export"
+      }
+    }
+  },
+  "en": {
+    "side_bar_progress": {
+      "title": "CV Builder",
+      "step": "Step",
+      "backHome": "Back to home",
+      "sections": {
+        "personal": "Personal information",
+        "work_experience": "Experience",
+        "education": "Education",
+        "skills": "Skills",
+        "languages": "Languages",
+        "summary": "Professional summary",
+        "export": "Export"
+      }
+    }
+  },
+  "it": {
+    "side_bar_progress": {
+      "title": "Creazione CV",
+      "step": "Fase",
+      "backHome": "Torna alla home",
+      "sections": {
+        "personal": "Informazioni personali",
+        "work_experience": "Esperienze",
+        "education": "Formazione",
+        "skills": "Competenze",
+        "languages": "Lingue",
+        "summary": "Profilo professionale",
+        "export": "Esporta"
+      }
+    }
+  }
+}

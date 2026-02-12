@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import './i18n/config/i18n.config';  // ← Import direct du fichier config
+import { LanguageProvider } from './i18n/context/LanguageContext';  // ← Import direct
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -8,7 +10,10 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <LanguageProvider>
+      <App/>
+    </LanguageProvider>
+    
   </React.StrictMode>
 );
 

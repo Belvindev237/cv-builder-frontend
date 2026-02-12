@@ -1,0 +1,44 @@
+{
+  "fr": {
+    "template4": {
+      "professionalSummary": "Résumé Professionnel",
+      "experience": "Expérience Professionnelle",
+      "education": "Formation",
+      "skills": "Compétences",
+      "technical": "Techniques",
+      "softSkills": "Soft Skills",
+      "languages": "Langues",
+      "hobbies": "Centres d'intérêt",
+      "present": "Présent",
+      "contact":"Contact"
+    }
+  },
+  "en": {
+    "template4": {
+      "professionalSummary": "Professional Summary",
+      "experience": "Professional Experience",
+      "education": "Education",
+      "skills": "Skills",
+      "technical": "Technical",
+      "softSkills": "Soft Skills",
+      "languages": "Languages",
+      "hobbies": "Interests",
+      "present": "Present",
+      "contact":"Contact"
+    }
+  },
+  "it": {
+    "template4": {
+      "professionalSummary": "Riassunto Professionale",
+      "experience": "Esperienza Professionale",
+      "education": "Formazione",
+      "skills": "Competenze",
+      "technical": "Tecniche",
+      "softSkills": "Soft Skills",
+      "languages": "Lingue",
+      "hobbies": "Interessi",
+      "present": "Presente",
+      "contact":"Contatti"
+    }
+  }
+}

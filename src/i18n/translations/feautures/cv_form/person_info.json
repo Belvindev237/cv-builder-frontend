@@ -1,0 +1,74 @@
+{
+  "fr": {
+    "person_info": {
+      "title": "Informations Personnelles",
+      "firstName": "Prénom",
+      "firstNamePlaceholder": "Ex: Jean",
+      "lastName": "Nom",
+      "lastNamePlaceholder": "Ex: Dupont",
+      "jobTitle": "Titre du poste",
+      "jobTitlePlaceholder": "Ex: Développeur Fullstack",
+      "address": "Adresse",
+      "addressPlaceholder": "Ex: 12 rue des Développeurs",
+      "postalCode": "Code Postal",
+      "postalCodePlaceholder": "Ex: 75000",
+      "city": "Ville",
+      "cityPlaceholder": "Ex: Paris",
+      "phone": "Téléphone",
+      "phonePlaceholder": "Ex: 06 00 00 00 00",
+      "email": "Email",
+      "emailPlaceholder": "Ex: jean.dupont@mail.com",
+      "website": "Site Web / Portfolio / LinkedIn",
+      "websitePlaceholder": "Ex: linkedin.com/in/mon-profil",
+      "nextButton": "Commencer →"
+    }
+  },
+  "en": {
+    "person_info": {
+      "title": "Personal Information",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Ex: John",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Ex: Doe",
+      "jobTitle": "Job Title",
+      "jobTitlePlaceholder": "Ex: Fullstack Developer",
+      "address": "Address",
+      "addressPlaceholder": "Ex: 12 Developer Street",
+      "postalCode": "Postal Code",
+      "postalCodePlaceholder": "Ex: 10001",
+      "city": "City",
+      "cityPlaceholder": "Ex: New York",
+      "phone": "Phone",
+      "phonePlaceholder": "Ex: 555-555-5555",
+      "email": "Email",
+      "emailPlaceholder": "Ex: john.doe@mail.com",
+      "website": "Website / Portfolio / LinkedIn",
+      "websitePlaceholder": "Ex: linkedin.com/in/my-profile",
+      "nextButton": "Start →"
+    }
+  },
+  "it": {
+    "person_info": {
+      "title": "Informazioni Personali",
+      "firstName": "Nome",
+      "firstNamePlaceholder": "Es: Giovanni",
+      "lastName": "Cognome",
+      "lastNamePlaceholder": "Es: Rossi",
+      "jobTitle": "Titolo di lavoro",
+      "jobTitlePlaceholder": "Es: Sviluppatore Fullstack",
+      "address": "Indirizzo",
+      "addressPlaceholder": "Es: Via dei Sviluppatori 12",
+      "postalCode": "CAP",
+      "postalCodePlaceholder": "Es: 00100",
+      "city": "Città",
+      "cityPlaceholder": "Es: Roma",
+      "phone": "Telefono",
+      "phonePlaceholder": "Es: 06 00 00 00 00",
+      "email": "Email",
+      "emailPlaceholder": "Es: giovanni.rossi@mail.com",
+      "website": "Sito Web / Portfolio / LinkedIn",
+      "websitePlaceholder": "Es: linkedin.com/in/mio-profilo",
+      "nextButton": "Inizia →"
+    }
+  }
+}

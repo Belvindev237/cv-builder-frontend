@@ -1,0 +1,34 @@
+{
+  "fr": {
+    "login": {
+      "emailLabel": "Email",
+      "emailPlaceholder": "nom@exemple.com",
+      "passwordLabel": "Mot de passe",
+      "passwordPlaceholder": "••••••••",
+      "submit": "Connexion",
+      "error": "Erreur de connexion"
+    }
+  },
+
+  "en": {
+    "login": {
+      "emailLabel": "Email",
+      "emailPlaceholder": "name@example.com",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "••••••••",
+      "submit": "Sign in",
+      "error": "Login error"
+    }
+  },
+
+  "it": {
+    "login": {
+      "emailLabel": "Email",
+      "emailPlaceholder": "nome@esempio.com",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "••••••••",
+      "submit": "Accedi",
+      "error": "Errore di accesso"
+    }
+  }
+}
