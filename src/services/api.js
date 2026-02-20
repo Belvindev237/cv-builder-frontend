@@ -5,8 +5,8 @@ const isLocalhost =
 
 const api = axios.create({
   baseURL: isLocalhost
-    ? "http://localhost:8000" // URL pour ton PC
-    : "https://cv-builder-d7rd.onrender.com", // URL pour Render
+    ? "http://localhost:8000"
+    : "https://cv-builder-backend-production.up.railway.app",
 });
 
 api.interceptors.request.use((config) => {
