@@ -24,7 +24,7 @@ export default function Visualisation() {
   const navigate = useNavigate();
   const [selectedTemplate, setSelectedTemplate] = useState(null);
   const [isGenerating, setIsGenerating] = useState(false);
-const API_URL="https://cv-builder-d7rd.onrender.com";
+const API_URL = "https://cv-builder-backend-production.up.railway.app";
   const templates = [
     { id: 1, name: t('visualisation.templates.1'), component: CVTemplate1 },
     { id: 2, name: t('visualisation.templates.2'), component: CVTemplate2 },
