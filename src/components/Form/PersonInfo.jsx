@@ -27,7 +27,7 @@ export default function PersonInfo({ formData, setFormData, Next }) {
       'city',
       'phone',
       'email',
-      'website'
+     
     ];
 
     requiredFields.forEach(field => {
@@ -170,7 +170,7 @@ export default function PersonInfo({ formData, setFormData, Next }) {
             value={formData.website || ""}
             onChange={handleChange}
             placeholder={t('person_info.websitePlaceholder')}
-            error={errors.website}
+           
             required
           />
         </div>
