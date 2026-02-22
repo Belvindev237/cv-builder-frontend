@@ -11,15 +11,25 @@ export default function Education({ formData, setFormData, Prev, Next }) {
     startDate: "",
     endDate: "",
     fieldOfStudy: "",
+    isOngoing: false, // 1. Ajout de l'état "en cours"
   });
 
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setLocalEdu((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    const newValue = type === "checkbox" ? checked : value;
+
+    setLocalEdu((prev) => {
+      const updated = { ...prev, [name]: newValue };
+      
+      // 2. Si c'est en cours, on réinitialise la date de fin
+      if (name === "isOngoing" && checked) {
+        updated.endDate = "";
+      }
+      return updated;
+    });
     
-    // Effacer l'erreur quand l'utilisateur tape
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
@@ -28,28 +38,20 @@ export default function Education({ formData, setFormData, Prev, Next }) {
   const validateEducation = () => {
     const newErrors = {};
 
-    // Validation des champs obligatoires
-    if (!localEdu.degree || localEdu.degree.trim() === "") {
-      newErrors.degree = t('validation.required');
-    }
-    if (!localEdu.institution || localEdu.institution.trim() === "") {
-      newErrors.institution = t('validation.required');
-    }
-    if (!localEdu.startDate) {
-      newErrors.startDate = t('validation.required');
-    }
-    if (!localEdu.endDate) {
+    if (!localEdu.degree?.trim()) newErrors.degree = t('validation.required');
+    if (!localEdu.institution?.trim()) newErrors.institution = t('validation.required');
+    if (!localEdu.startDate) newErrors.startDate = t('validation.required');
+    
+    // 3. La date de fin est requise seulement si la formation n'est pas en cours
+    if (!localEdu.isOngoing && !localEdu.endDate) {
       newErrors.endDate = t('validation.required');
     }
-    if (!localEdu.fieldOfStudy || localEdu.fieldOfStudy.trim() === "") {
-      newErrors.fieldOfStudy = t('validation.required');
-    }
 
-    // Validation des dates
-    if (localEdu.startDate && localEdu.endDate) {
+    if (!localEdu.fieldOfStudy?.trim()) newErrors.fieldOfStudy = t('validation.required');
+
+    if (localEdu.startDate && localEdu.endDate && !localEdu.isOngoing) {
       const start = new Date(localEdu.startDate);
       const end = new Date(localEdu.endDate);
-      
       if (end < start) {
         newErrors.endDate = t('validation.endDateBeforeStart');
       }
@@ -71,7 +73,8 @@ export default function Education({ formData, setFormData, Prev, Next }) {
         institution: "", 
         startDate: "", 
         endDate: "", 
-        fieldOfStudy: "" 
+        fieldOfStudy: "",
+        isOngoing: false 
       });
       setErrors({});
     } else {
@@ -87,7 +90,6 @@ export default function Education({ formData, setFormData, Prev, Next }) {
   };
 
   const handleNext = () => {
-    // Vérifier qu'au moins une formation a été ajoutée
     if (!formData.educationList || formData.educationList.length === 0) {
       alert(t('validation.atLeastOneEducation') || "Veuillez ajouter au moins une formation");
       return;
@@ -123,6 +125,22 @@ export default function Education({ formData, setFormData, Prev, Next }) {
               error={errors.institution}
               required
             />
+
+            {/* 4. Checkbox "En cours" */}
+            <div className="flex items-center gap-2 mb-1">
+              <input
+                type="checkbox"
+                id="isOngoing"
+                name="isOngoing"
+                checked={localEdu.isOngoing}
+                onChange={handleChange}
+                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              />
+              <label htmlFor="isOngoing" className="text-xs font-semibold text-gray-600 cursor-pointer">
+                {t("education.isOngoing") || "Formation en cours"}
+              </label>
+            </div>
+
             <div className="grid grid-cols-2 gap-3">
               <InputField
                 label={t("education.startDate")}
@@ -140,9 +158,11 @@ export default function Education({ formData, setFormData, Prev, Next }) {
                 value={localEdu.endDate}
                 onChange={handleChange}
                 error={errors.endDate}
-                required
+                required={!localEdu.isOngoing}
+                disabled={localEdu.isOngoing} // 5. Désactivé si en cours
               />
             </div>
+            
             <InputField
               label={t("education.fieldOfStudy")}
               name="fieldOfStudy"
@@ -178,13 +198,13 @@ export default function Education({ formData, setFormData, Prev, Next }) {
                   <p className="text-blue-600 font-semibold text-[10px]">{edu.institution}</p>
                   <p className="text-gray-500 text-[9px] mt-0.5">{edu.fieldOfStudy}</p>
                   <p className="text-gray-400 text-[9px] mt-1 italic">
-                    📅 {edu.startDate} — {edu.endDate || t("education.present")}
+                    {/* 6. Affichage conditionnel "Présent" */}
+                    📅 {edu.startDate} — {edu.isOngoing ? (t("education.present") || "Présent") : edu.endDate}
                   </p>
                 </div>
                 <button 
                   onClick={() => removeEducation(index)} 
                   className="text-gray-300 hover:text-red-500 p-1 transition-colors"
-                  title={t("education.deleteButton")}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -192,28 +212,16 @@ export default function Education({ formData, setFormData, Prev, Next }) {
                 </button>
               </div>
             ))}
-
-            {(!formData.educationList || formData.educationList.length === 0) && (
-              <div className="border-2 border-dashed border-gray-200 rounded-xl py-12 text-center bg-gray-50/50">
-                <p className="text-xs text-gray-400 italic">{t("education.noEducation")}</p>
-              </div>
-            )}
           </div>
         </div>
       </div>
 
       {/* NAVIGATION */}
       <div className="flex justify-between items-center mt-10 pt-4 border-t border-gray-100">
-        <button 
-          onClick={Prev} 
-          className="text-xs font-bold text-gray-500 hover:text-gray-800 transition-colors"
-        >
+        <button onClick={Prev} className="text-xs font-bold text-gray-500 hover:text-gray-800 transition-colors">
           {t("education.prev")}
         </button>
-        <button 
-          onClick={handleNext} 
-          className="px-8 py-2 bg-gray-900 text-white rounded-full text-xs font-black hover:bg-blue-600 uppercase tracking-widest shadow-md active:scale-95 transition-all"
-        >
+        <button onClick={handleNext} className="px-8 py-2 bg-gray-900 text-white rounded-full text-xs font-black hover:bg-blue-600 uppercase tracking-widest shadow-md active:scale-95 transition-all">
           {t("education.next")}
         </button>
       </div>

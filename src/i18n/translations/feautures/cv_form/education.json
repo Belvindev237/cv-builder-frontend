@@ -16,7 +16,8 @@
       "prev": "← Précédent",
       "next": "Suivant",
       "countLabel": "diplômes",
-      "present": "Présent"
+      "present": "Présent",
+      "isOngoing": "Formation en cours"
     }
   },
   "en": {
@@ -36,7 +37,8 @@
       "prev": "← Previous",
       "next": "Next",
       "countLabel": "degrees",
-      "present": "Present"
+      "present": "Present",
+      "isOngoing": "Ongoing education"
     }
   },
   "it": {
@@ -56,7 +58,8 @@
       "prev": "← Precedente",
       "next": "Successivo",
       "countLabel": "titoli",
-      "present": "Presente"
+      "present": "Presente",
+      "isOngoing": "Formazione in corso"
     }
   }
 }

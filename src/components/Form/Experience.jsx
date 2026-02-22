@@ -12,15 +12,27 @@ export default function Experience({ formData, setFormData, Prev, Next }) {
     startDate: "",
     endDate: "",
     description: "",
+    isCurrent: false, // 1. Ajout du booléen dans l'état local
   });
 
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setLocalExp((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type, checked } = e.target;
     
-    // Effacer l'erreur quand l'utilisateur tape
+    // 2. Gestion spécifique de la checkbox
+    const newValue = type === "checkbox" ? checked : value;
+
+    setLocalExp((prev) => {
+      const updated = { ...prev, [name]: newValue };
+      
+      // Si on coche "Poste actuel", on vide la date de fin
+      if (name === "isCurrent" && checked) {
+        updated.endDate = "";
+      }
+      return updated;
+    });
+    
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
@@ -29,35 +41,25 @@ export default function Experience({ formData, setFormData, Prev, Next }) {
   const validateExperience = () => {
     const newErrors = {};
 
-    // Validation des champs obligatoires
-    if (!localExp.jobTitle || localExp.jobTitle.trim() === "") {
-      newErrors.jobTitle = t('validation.required');
-    }
-    if (!localExp.company || localExp.company.trim() === "") {
-      newErrors.company = t('validation.required');
-    }
-    if (!localExp.location || localExp.location.trim() === "") {
-      newErrors.location = t('validation.required');
-    }
-    if (!localExp.startDate) {
-      newErrors.startDate = t('validation.required');
-    }
-    if (!localExp.endDate) {
+    if (!localExp.jobTitle?.trim()) newErrors.jobTitle = t('validation.required');
+    if (!localExp.company?.trim()) newErrors.company = t('validation.required');
+    if (!localExp.location?.trim()) newErrors.location = t('validation.required');
+    if (!localExp.startDate) newErrors.startDate = t('validation.required');
+    
+    // 3. Validation conditionnelle : endDate n'est requise que si isCurrent est faux
+    if (!localExp.isCurrent && !localExp.endDate) {
       newErrors.endDate = t('validation.required');
     }
-    if (!localExp.description || localExp.description.trim() === "") {
-      newErrors.description = t('validation.required');
-    }
 
-    // Validation des dates
-    if (localExp.startDate && localExp.endDate) {
+    if (localExp.startDate && localExp.endDate && !localExp.isCurrent) {
       const start = new Date(localExp.startDate);
       const end = new Date(localExp.endDate);
-      
       if (end < start) {
         newErrors.endDate = t('validation.endDateBeforeStart') || "La date de fin doit être après la date de début";
       }
     }
+
+    if (!localExp.description?.trim()) newErrors.description = t('validation.required');
 
     return newErrors;
   };
@@ -70,6 +72,7 @@ export default function Experience({ formData, setFormData, Prev, Next }) {
         ...prev,
         experienceList: [...(prev.experienceList || []), localExp],
       }));
+      // Reset de l'état (incluant isCurrent)
       setLocalExp({
         jobTitle: "",
         company: "",
@@ -77,6 +80,7 @@ export default function Experience({ formData, setFormData, Prev, Next }) {
         startDate: "",
         endDate: "",
         description: "",
+        isCurrent: false,
       });
       setErrors({});
     } else {
@@ -92,7 +96,6 @@ export default function Experience({ formData, setFormData, Prev, Next }) {
   };
 
   const handleNext = () => {
-    // Vérifier qu'au moins une expérience a été ajoutée
     if (!formData.experienceList || formData.experienceList.length === 0) {
       alert(t('validation.atLeastOneExperience') || "Veuillez ajouter au moins une expérience");
       return;
@@ -103,7 +106,6 @@ export default function Experience({ formData, setFormData, Prev, Next }) {
   return (
     <div className="p-4 bg-gray-50/30 rounded-lg">
       <div className="flex flex-col lg:flex-row gap-6">
-        {/* --- COLONNE GAUCHE : FORMULAIRE --- */}
         <div className="flex-1 bg-white p-5 border border-gray-100 rounded-xl shadow-sm space-y-3">
           <h3 className="text-sm font-bold text-gray-800 border-b pb-2 mb-2">
             {t('experience.addTitle')}
@@ -119,25 +121,42 @@ export default function Experience({ formData, setFormData, Prev, Next }) {
               error={errors.jobTitle}
               required
             />
-            <InputField
-              label={t('experience.company')}
-              name="company"
-              value={localExp.company}
-              onChange={handleChange}
-              placeholder={t('experience.company')}
-              error={errors.company}
-              required
-            />
             
-            <InputField
-              label={t('experience.positions')}
-              name="location"
-              value={localExp.location}
-              onChange={handleChange}
-              placeholder={t('experience.positions')}
-              error={errors.location}
-              required
-            />
+            <div className="grid grid-cols-2 gap-3">
+                <InputField
+                  label={t('experience.company')}
+                  name="company"
+                  value={localExp.company}
+                  onChange={handleChange}
+                  placeholder={t('experience.company')}
+                  error={errors.company}
+                  required
+                />
+                <InputField
+                  label={t('experience.positions')}
+                  name="location"
+                  value={localExp.location}
+                  onChange={handleChange}
+                  placeholder={t('experience.positions')}
+                  error={errors.location}
+                  required
+                />
+            </div>
+
+            {/* --- NOUVELLE CHECKBOX --- */}
+            <div className="flex items-center gap-2 mb-1">
+              <input
+                type="checkbox"
+                id="isCurrent"
+                name="isCurrent"
+                checked={localExp.isCurrent}
+                onChange={handleChange}
+                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              />
+              <label htmlFor="isCurrent" className="text-xs font-semibold text-gray-600 cursor-pointer">
+                {t('experience.isCurrent') || "Je travaille actuellement ici"}
+              </label>
+            </div>
 
             <div className="grid grid-cols-2 gap-3">
               <InputField
@@ -156,7 +175,8 @@ export default function Experience({ formData, setFormData, Prev, Next }) {
                 value={localExp.endDate}
                 onChange={handleChange}
                 error={errors.endDate}
-                required
+                required={!localExp.isCurrent}
+                disabled={localExp.isCurrent} // Désactivé si poste actuel
               />
             </div>
 
@@ -215,13 +235,12 @@ export default function Experience({ formData, setFormData, Prev, Next }) {
                     📍 {exp.location}
                   </p>
                   <p className="text-gray-400 text-[9px] flex items-center gap-1">
-                    📅 {exp.startDate} — {exp.endDate || t('experience.present')}
+                    📅 {exp.startDate} — {exp.isCurrent ? (t('experience.present') || "Présent") : exp.endDate}
                   </p>
                 </div>
                 <button
                   onClick={() => removeExperience(index)}
                   className="text-gray-300 hover:text-red-500 transition-colors p-1"
-                  title={t('experience.deleteButton')}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -229,33 +248,39 @@ export default function Experience({ formData, setFormData, Prev, Next }) {
                 </button>
               </div>
             ))}
-
-            {(!formData.experienceList || formData.experienceList.length === 0) && (
-              <div className="border-2 border-dashed border-gray-200 rounded-xl py-12 text-center">
-                <p className="text-xs text-gray-400 italic">
-                  {t('experience.noExperience')}
-                </p>
-              </div>
-            )}
           </div>
         </div>
       </div>
+         {/* --- NAVIGATION --- */}
 
-      {/* --- NAVIGATION --- */}
       <div className="flex justify-between items-center mt-10 pt-4 border-t border-gray-100">
+
         <button
+
           onClick={Prev}
+
           className="text-xs font-bold text-gray-500 hover:text-gray-800 transition-colors flex items-center gap-1"
+
         >
+
           {t('experience.prev')}
+
         </button>
+
         <button
+
           onClick={handleNext}
+
           className="px-8 py-2 bg-blue-600 text-white rounded-full text-xs font-black hover:bg-blue-700 hover:shadow-lg active:scale-95 transition-all uppercase tracking-widest"
+
         >
+
           {t('experience.next')}
+
         </button>
+
       </div>
+
     </div>
   );
 }

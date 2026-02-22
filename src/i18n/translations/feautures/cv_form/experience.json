@@ -15,7 +15,8 @@
       "deleteButton": "Supprimer",
       "noExperience": "Aucune expérience renseignée",
       "prev": "Précédent",
-      "next": "Continuer"
+      "next": "Continuer",
+      "isCurrent": "Je travaille actuellement ici"
     }
   },
   "en": {
@@ -34,7 +35,8 @@
       "deleteButton": "Delete",
       "noExperience": "No experience added",
       "prev": "Previous",
-      "next": "Continue"
+      "next": "Continue",
+      "isCurrent": "I currently work here"
     }
   },
   "it": {
@@ -53,7 +55,8 @@
       "deleteButton": "Elimina",
       "noExperience": "Nessuna esperienza aggiunta",
       "prev": "Precedente",
-      "next": "Continua"
+      "next": "Continua",
+      "isCurrent": "Lavoro attualmente qui"
     }
   }
 }
